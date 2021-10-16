@@ -1,0 +1,157 @@
+@charset "utf8";
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+:root{
+    --cor1: #09B0A8;
+    --cor2: #e0e0e0;
+    --cor3: #0053A3;
+    --cor5: #002A5A;
+    --cor6: #0051A2;
+    --cor7: #0993BA;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    margin: auto;
+    background-image: linear-gradient(0deg, var(--cor3), var(--cor5), var(--cor6));
+}
+
+main{
+    background-color: var(--cor2);
+    width: 500px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.400);
+}
+
+h1{
+    margin: 50px auto;
+    text-align: center;
+    font-size: 3em;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.200);
+}
+
+h2{
+    margin: 30px auto;
+    text-align: center;
+    font-size: 1.6em;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.200); 
+}
+
+div#caixasQuantidadeDeAvaliacoes{
+    text-align: center;
+    margin: 20px auto;
+    width: 500px;
+}
+
+div#opcao{
+    text-align: left;
+    margin: 20px auto;
+    width: 269px;
+}
+
+div#opcao p{
+    margin: 10px 0;
+}
+
+label{
+    font-size: 1.1em;
+    font-weight: bold;
+    display: inline-block;
+}
+
+input{
+    margin: auto;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+input#quantidadeDeAvaliacoes{
+    width: 50px;
+    height: 25px;
+    text-align: center;
+}
+
+button{
+    display: block;
+    margin: 50px auto;
+    text-align: center;
+    width: 150px;
+    height: 40px;
+    background-color: var(--cor1);
+    font-size: 1.1em;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.300);
+}
+
+button#media-ponderada{
+    display: block;
+    margin: 50px auto;
+    text-align: center;
+    width: 245px;
+    height: 40px;
+    background-color: var(--cor1);
+    font-size: 1.1em;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.300);
+}
+
+button:hover, button#media-ponderada:hover{
+    background-color: var(--cor7);
+    color: white;
+}
+
+#notas{
+    text-align: center;   
+}
+
+.caixa-notas{
+    margin: 20px auto;    
+}
+
+#nota1, #nota2, #nota3, #nota4, #nota5, #peso1, #peso2, #peso3, #peso4, #peso5{
+    text-align: center;
+    width: 45px;
+}
+
+#resultado > p{
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+#resultado > #msg-erro{
+    font-size: 1.2em;
+}
+
+footer{
+    font-size: 1.1em;
+    color: var(--cor2);
+    text-align: center;
+    margin: 20px auto;
+}
+
+footer p{
+    margin: 10px auto;
+}
+
+footer img{
+    width: 25px;
+    height: 25px;
+    margin-left: 15px;
+    
+}

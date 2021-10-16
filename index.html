@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Calculadora de Média</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <header>
+
+        <h1>
+            Calculadora de Média
+        </h1>
+
+        <h2>
+            Calculando a média e média ponderada
+        </h2>
+
+    </header>
+
+    <main>
+        <div id="caixasQuantidadeDeAvaliacoes">
+
+            <label for="quantidadeDeAvaliacoes">
+                Quantida de avaliações:
+            </label>
+
+            <input 
+            type="number" 
+            name="quantidadeDeAvaliacoes" id="quantidadeDeAvaliacoes"  
+            min="2" 
+            max="5">
+
+        </div>
+
+        <div id="opcao">
+
+            <label for="">Média</label>
+
+            <input type="radio" name="media-ou-media-ponderada" id="media" value="media">
+
+            <p>ou</p>
+
+            <label for="">Média Ponderada</label>
+
+            <input type="radio" name="media-ou-media-ponderada" id="media-ponderada" value="media ponderada">
+
+        </div>
+
+        <button 
+        type="submit" 
+        onclick="inserirNotas()" 
+        id="fazerCalculo">
+            Inseir as notas
+        </button>
+        
+
+        <div id="notas"></div>
+        <div id="btn-calcular"></div>
+        <div id="resultado"></div>
+
+    </main>
+
+    <footer>
+        <p>
+            Criado por Iago Machado
+        </p>
+
+        <p>
+            <a href="https://www.linkedin.com/in/iago-machado/" target="_blank" rel="external">
+                <img src="img/linkedin.svg" alt="linkedin">
+            </a>
+
+            <a href="https://github.com/iagomachadoo" target="_blank" rel="external">
+                <img src="img/github.svg" alt="git hub">
+            </a>
+            </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
+
