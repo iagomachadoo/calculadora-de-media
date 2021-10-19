@@ -1,62 +1,82 @@
+let inputQuantidadeAvaliacoes = document.getElementById('quantidadeDeAvaliacoes');
+
+let inputRadioMediaMediaPonderada = document.getElementsByName('media-ou-media-ponderada');
+
+let divNotas = document.getElementById('notas');
+
+let btnCalcular = document.getElementById('btn-calcular');
+
+let divResultado = document.getElementById('resultado');
+
+let listaQuantidadeAvaliacoes = [];
+
 function inserirNotas() { 
-    let quantidadeDeAvaliacoes = Number(document.getElementById('quantidadeDeAvaliacoes').value);//pegando o elemento input quantidadeDeAvaliacoes, o seu valor e tranformando em um tipo numérico 
 
-    let mediaOuMediaPonderada = document.getElementsByName('media-ou-media-ponderada')//pegando o elemento input type radio com os valores média ou média ponddera
+    if (inputRadioMediaMediaPonderada[0].checked){
+        
+        for(let i = 1; i <= inputQuantidadeAvaliacoes.value; i++){
+            
+            let elementoLabel = document.createElement('label');
 
-    let divNotas = document.getElementById('notas');//pegando o elemento div que vai receber os inputs que vão receber as notas
+            elementoLabel.setAttribute('id', `label-nota${i}`);
 
-    if (mediaOuMediaPonderada[0].checked) {//se o input type radio for igual a média
+            elementoLabel.textContent = `Avaliação ${i}`;
 
-        let btnCalcular = document.getElementById('btn-calcular');//pegando a div que vai receber o botão para calcular a média
+            let elementoInput = document.createElement('input');
 
-        let i = 1 
+            elementoInput.setAttribute('type', 'number');
 
-        while (i <= quantidadeDeAvaliacoes) {
-            divNotas.innerHTML += `<div class='caixa-notas'>
-            <label for="nota${i}">Nota da Avaliação ${i}</label>
-            <input type="number" id="nota${i}" class="notas" min='0' max='10'></div>`
-            //inserindo a div, label e input que vão receber as notas 
+            elementoInput.setAttribute('id', `input-nota${i}`);
 
-            i++
-        }//laço enquanto para adicionar automaticamete a quantidade de notas
+            divNotas.appendChild(elementoLabel);
 
-        btnCalcular.innerHTML = `<button type="submit" onclick="calcular()">Calcular Média</button>`//adicionando o botão calcular com o evento onclick 
+            divNotas.appendChild(elementoInput);
+            
+        }
 
-    }else if(mediaOuMediaPonderada[1].checked){//se o input type radio for igual a média ponderada
+        let elementoBtnCalcular = document.createElement('input');
+        elementoBtnCalcular.setAttribute('type', 'button');
+        elementoBtnCalcular.setAttribute('value', 'Calcular Média');
+        btnCalcular.appendChild(elementoBtnCalcular);
 
-        let btnCalcular = document.getElementById('btn-calcular');//pegando a div que vai receber o botão para calcular a média ponderada
+        
+    }else if(inputRadioMediaMediaPonderada[1].checked){
 
-        let i = 1 
+        for(let i = 1; i <= inputQuantidadeAvaliacoes.value; i++){
+            
+            let elementoLabel = document.createElement('label');
 
-        while (i <= quantidadeDeAvaliacoes) {
-            divNotas.innerHTML += `<div class='caixa-notas'>
-            <label for="nota${i}">Nota da Avaliação ${i}</label>
-            <input type="number" id="nota${i}" class="notas" min='0' max='10'>
-            <label for="peso${i}">Peso da Avaliação ${i}</label>
-            <input type="number" id="peso${i}" class="notas" min='0' max='10'></div>`//inserindo a div, label e input que vão receber as notas e pesos 
+            elementoLabel.setAttribute('id', `label-nota${i}`);
 
-            i++
-        }//laço enquanto para adicionar automaticamete a quantidade de notas e pesos
+            elementoLabel.textContent = `Avaliação ${i}`;
 
-        btnCalcular.innerHTML = `<button type="submit" id="media-ponderada"onclick="calcular()">Calcular Média Ponderada</button>`//adicionando o botão calcular com o evento onclick
+            let elementoInput = document.createElement('input');
+
+            elementoInput.setAttribute('type', 'number');
+
+            elementoInput.setAttribute('id', `input-nota${i}`);
+
+            divNotas.appendChild(elementoLabel);
+
+            divNotas.appendChild(elementoInput);
+            
+        }
+
+        let elementoBtnCalcular = document.createElement('input');
+        elementoBtnCalcular.setAttribute('type', 'button');
+        elementoBtnCalcular.setAttribute('value', 'Calcular Média Ponderada');
+        btnCalcular.appendChild(elementoBtnCalcular);
 
     }else{
-        let divResultado = document.getElementById('resultado');
+        
+        let elementoParagrafo = document.createElement('p');
 
-        divResultado.innerHTML = `<p id='msg-erro'>Erro, preencher os campos.</p>`
+        elementoParagrafo.textContent = 'Erro, preencher os campos.';
 
-        divResultado.style.background= 'var(--cor1)'
-        divResultado.style.width= '300px'
-        divResultado.style.height= '50px'
-        divResultado.style.margin= 'auto'
-        divResultado.style.display= 'flex'
-        divResultado.style.borderRadius= '10px'
-        divResultado.style.border= '1px solid black'
-        divResultado.style.boxShadow= '5px 2px 7px rgba(0, 0, 0, 0.300)'
+        divResultado.appendChild(elementoParagrafo);
     }
-
 }
-function calcular() {//função do botão calcular
+function calcular() {
     
     let quantidadeDeAvaliacoes = Number(document.getElementById('quantidadeDeAvaliacoes').value);
 
